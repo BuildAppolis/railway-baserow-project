@@ -12,9 +12,6 @@ cmd = "/baserow.sh start"
 [variables]
 BASEROW_PUBLIC_URL = "${{RAILWAY_PUBLIC_DOMAIN}}"
 SECRET_KEY = "${{secret(64)}}"
-DATABASE_URL = "postgresql://baserow:${{POSTGRES_PASSWORD}}@${{RAILWAY_PRIVATE_DOMAIN}}:5432/baserow"
-REDIS_URL = "redis://:${{REDIS_PASSWORD}}@${{RAILWAY_PRIVATE_DOMAIN}}:6379/0"
-POSTGRES_DB = "baserow"
-POSTGRES_USER = "baserow"
-POSTGRES_PASSWORD = "${{secret(32)}}"
-REDIS_PASSWORD = "${{secret(32)}}"
+
+# Database and Redis variables will be automatically configured by Railway
+# when we add the database services
