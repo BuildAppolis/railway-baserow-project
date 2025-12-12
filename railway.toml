@@ -1,6 +1,10 @@
 [services.baserow-app]
 [services.baserow-app.build]
 builder = "DOCKERFILE"
+[services.baserow-app.deploy]
+healthcheckPath = "/api/_health/"
+healthcheckTimeout = 300
+restartPolicyType = "ALWAYS"
 [services.baserow-app.env]
 BASEROW_PUBLIC_URL = "${{RAILWAY_PUBLIC_DOMAIN}}"
 SECRET_KEY = "${{secret(64)}}"
