@@ -6,6 +6,7 @@ BASEROW_PUBLIC_URL = "${{RAILWAY_PUBLIC_DOMAIN}}"
 SECRET_KEY = "${{secret(64)}}"
 DATABASE_URL = "${{services.postgres.DATABASE_URL}}"
 REDIS_URL = "${{services.redis.REDIS_URL}}"
+DISABLE_VOLUME_CHECK = "yes"
 
 [services.postgres]
 [services.postgres.env]
